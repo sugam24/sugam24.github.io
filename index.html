@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sugam</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/png" href="assets/image/sugam.png">
+<link rel="icon" type="image/png" href="assets/image/sugam.png">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script>
+$(document).ready(function(){
+
+  $("a").on('click', function(event) {
+
+  
+    if (this.hash !== "") {
+     
+      event.preventDefault();
+
+      
+      var hash = this.hash;
+
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 80, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</head>
+<body >
+<div class="page-wrapper" id="page-wrapper" style="margin: 20px; border: solid; padding: 5px;">
+    
+
+    
+    <div class="container-fluid">
+        <!-- Page Heading -->
+
+        <div class="row">
+            <div class="col-md-9 col-12">
+                	<h2 class="page-header"><a href="#">Sugam Dahal&nbsp</a>
+						<a href="#" onclick="document.getElementById('name_play').play(); "><img src="assets/image/speaker.png" style="height: 30px;" alt="Pronounce"></a>
+					</h2>
+					<audio id="name_play" src="assets/audio/sugam.wav"></audio>
+                	<strong>Computer Engineer | AI/ML Researcher</strong><br>
+					<strong>Institute of Engineering (IOE), Thapathali Campus, Kathmandu, Nepal</strong>
+                	<p style="color: blue;">Email: <!-- Add your email here -->dahalsugam24@gmail.com</p>
+                	<p><a  href="assets/file/Sugam_Resume.pdf" target="_blank">CV</a> | <a target="_blank" href="https://github.com/sugam24/">GitHub</a> | <a target="_blank" href="https://www.linkedin.com/in/sugam-dahal24s/">LinkedIn</a> | <a target="_blank" href="https://orcid.org/0009-0004-0786-6656">ORCID</a> | <a target="_blank" href="https://huggingface.co/sugam24">Hugging Face</a>
+                	</p>   	
+            </div>
+            <div class="col-12 col-md-3">
+            	<img src="assets/image/sugam.png" style="width:80%; float: center;">
+            </div>
+        </div>
+         <hr>
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav  class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav  nav-fill w-100">
+    <li class="nav-item">
+      <a class="nav-link" href="#about">About me</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#education">Education</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#experience">Experience</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#research">Research</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#publications">Publications</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#skills">Technical Skills</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="#projects">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#certifications">Certifications</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#beyond">Beyond the Lab</a>
+    </li>
+  </ul>
+
+</nav>
+<hr>
+<div class=" col-lg-12 col-md-12 col-sm-12" id="about">
+	<h2  class="main_header">About me</h2>
+	
+	<p  class="main_para">I'm Sugam, a Computer Engineering graduate from the Institute of Engineering (IOE), Thapathali Campus, Kathmandu, working at the intersection of deep learning, computer vision, and large language models. I got my start building a GPT-style language model from scratch, tokenizer up, and that habit of understanding systems from the ground up has carried through production ML work and into research, and it's now pulling me toward agentic AI.</p>
+	<p class="main_para">I care about the full loop: data pipelines, training, evaluation, and deployment, not just getting something to work in a notebook. Outside research, I follow football and cricket closely, and I've always been drawn to geography and politics.</p>
+</div>
+<hr>
+
+<div class=" col-lg-12 col-md-12 col-sm-12" id="education">
+	<h2 class="main_header">Education</h2>
+	<ul class="list-unstyled">
+		<li>
+			<h4 class="sub_header">Undergraduate</h4>
+			<ul class="sub_list">
+				<li><b>Apr 2022 &ndash; Aug 2026</b>, Bachelor of Engineering in Computer Engineering | 78.56%</li>
+				<li>Institute of Engineering (IOE), Thapathali Campus, Kathmandu, Nepal</li>
+			</ul>
+		</li>
+		<hr>
+		<li>
+			<h4 class="sub_header">Higher Secondary</h4>
+			<ul class="sub_list">
+				<li><b>Jun 2019 &ndash; Dec 2021</b>, Higher Secondary Education (Science) | GPA 3.59 / 4.00</li>
+				<li>Global School of Science, Kathmandu, Nepal</li>
+			</ul>
+		</li>
+		<hr>
+		<li>
+			<h4 class="sub_header">Secondary</h4>
+			<ul class="sub_list">
+				<li><b>Graduated: 2019</b>, Secondary Education Examination (SEE) | GPA 3.90 / 4.00</li>
+				<li>Reliance International Academy, Kathmandu, Nepal</li>
+			</ul>
+		</li>
+	</ul>
+	
+</div>
+<hr>
+
+<div class=" col-lg-12 col-md-12 col-sm-12" id="experience">
+	<h2 class="main_header">Professional Experience</h2>
+	
+	<ul class="list-unstyled">
+		<li>
+			<h4 class="sub_header">AI Research Intern</h4>
+			<p class=""><b>Dec 2025 &ndash; Mar 2026</b> <span style="color: blue;">Wise Yak Solutions Pvt. Ltd., Kathmandu, Nepal</span></p>
+			<ul class="sub_list">
+				<li>Engineered a production-ready OCR pipeline built on a 1B-parameter vision-language model, extracting structured text, dense tables and mathematical notation from complex document layouts.</li>
+				<li>Architected a dual-engine inference backend using standard PyTorch for local development and vLLM with PagedAttention for high-throughput production serving, packaged behind a FastAPI service with Docker deployment.</li>
+				<li>Evaluated post-training quantization methods (GPTQ, AWQ) for LLM inference, comparing memory footprint and output quality to inform deployment decisions on constrained hardware.</li>
+				<li>Investigated custom neural network architectures and algorithm optimization within the AI Research Team, supporting applied computer vision research and deployment.</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<hr>
+
+<div class=" col-lg-12 col-md-12 col-sm-12" id="research">
+	<h2 class="main_header">Research Experience</h2>
+	
+	<p class="sub_list" style="margin-bottom: 20px;">My research interests lie broadly in deep learning, with particular focus on computer vision, large language models, NLP, generative models, and reinforcement learning. I'm increasingly drawn to mechanistic interpretability and representation learning, trying to understand not just how these systems perform, but why they work the way they do. Whether that leads to theoretical insight or a deployable system, what matters most to me is doing the work with rigor.</p>
+
+	<ul class="list-unstyled">
+		<li>
+			<h4 class="sub_header">Independent Researcher — Land-Use Segmentation and Generative Augmentation</h4>
+			<p class=""><b>May 2026 &ndash; Present</b> <span style="color: blue;">Dept. of Electronics and Computer Engineering, IOE Thapathali Campus, Kathmandu, Nepal</span></p>
+			<ul class="sub_list">
+				<li>Built and released a six-class land-use segmentation benchmark covering 202.4 km² of the Kathmandu Valley across 408 hand-annotated fine-resolution scenes, published on Zenodo with fold definitions, metric records and trained weights (DOI: 10.5281/zenodo.22349064).</li>
+				<li>Designed and validated a full evaluation protocol across five architectures (U-Net, UNetFormer, SegFormer-B0, SegNeXt-T, proposed) and two data partitioning regimes, quantifying that split protocol alone shifts reported mIoU by 0.051–0.095, an effect larger than any architectural difference.</li>
+				<li>Developed a thin-structure-aware segmentation model adding a residual detail path, boundary-reliability reweighting, a clDice topology loss and a presence-balanced sampler to a SegFormer-B0 backbone, improving on the backbone in every fold-run for 1.9% additional parameters.</li>
+				<li>Implemented a two-stage diffusion generator (mask DDPM plus LoRA-adapted Stable Diffusion with a class-channel ControlNet) and a compute-matched downstream evaluation with bootstrap confidence intervals; first-author manuscript in preparation, preprint forthcoming.</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<hr>
+
+<div class=" col-lg-12 col-md-12 col-sm-12" id="publications">
+	<h2 class="main_header">Publications</h2>
+	<ul class="list-unstyled">
+		<li>
+			<h4 class="sub_header">Dataset</h4>
+			<ul class="sub_list">
+				<li>
+					<p>Parajuli, P., &amp; Dahal, S. (2026). Kathmandu Valley Land-Use and Land-Cover Segmentation Dataset (Version 1) [Dataset]. Zenodo. <a href="https://doi.org/10.5281/zenodo.22349064" target="_blank">https://doi.org/10.5281/zenodo.22349064</a></p>
+					<p><a href="https://zenodo.org/records/22349064" target="_blank">[Zenodo Record]</a></p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<hr>
+
+<div class=" col-lg-12 col-md-12 col-sm-12" id="skills">
+	<h2 class="main_header">Technical Skills</h2>
+	<ul class="list-unstyled">
+		<li>
+			<ul class="sub_list">
+				<li><b>Programming Languages:</b> Python, C++, JavaScript, SQL, Bash, LaTeX</li>
+				<li><b>Machine Learning &amp; Deep Learning:</b> PyTorch, TensorFlow, Scikit-learn, XGBoost, Hugging Face Transformers, Neural Networks, CNN, RNN, Transformers, Semantic Segmentation, Diffusion Models, Transfer Learning, Fine-Tuning, LoRA / PEFT, Model Quantization (GPTQ, AWQ), Mixed-Precision Training</li>
+				<li><b>LLMs &amp; NLP:</b> Large Language Models, GPT-2 Fine-Tuning, BPE Tokenization, Multi-Head Attention, Function Calling, Structured Outputs, Agentic Workflows, Prompt Engineering, LLM Evaluation (BLEU, Perplexity)</li>
+				<li><b>Computer Vision:</b> Image Segmentation, Vision-Language Models, OCR, SegFormer, U-Net, Stable Diffusion, ControlNet, Albumentations, CVAT</li>
+				<li><b>MLOps &amp; Deployment:</b> FastAPI, Flask, vLLM, Docker, REST APIs, Git, GitHub, Linux, PostgreSQL, Weights &amp; Biases, pytest, Pydantic, CUDA, Google Colab, Hugging Face Hub</li>
+				<li><b>Data Science &amp; Statistics:</b> NumPy, Pandas, Matplotlib, Seaborn, Data Preprocessing, Feature Engineering, PCA, Cross-Validation, Bootstrap Confidence Intervals, Experiment Design, Statistical Analysis, Data Visualization</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<hr>
+
+<div id="projects" class=" col-lg-12 col-md-12 col-sm-12">
+	<h2 class="main_header">Selective Projects</h2>
+	<ul class="list-unstyled" style="line-height: 30px;">
+		<li>
+			<ul class="sub_list">
+				<li>
+					<h4 class="sub_header">GeoNUSAF: GeoSpatial Neural Urban Synthesis and Analysis Framework</h4>
+					<p><em>PyTorch, SegFormer, Stable Diffusion, ControlNet, FastAPI, Weights &amp; Biases | Team of 4</em></p>
+					<ul>
+						<li>Fine-tuned a SegFormer-B0 backbone for 7-class urban land-use segmentation on 512x512 satellite imagery, using class-weighted cross-entropy for imbalance, albumentations-based augmentation and 3-fold cross-validation, reaching 0.50–0.60 validation mIoU with experiment tracking in Weights &amp; Biases.</li>
+						<li>Built a generative urban-planning pipeline feeding segmentation masks and templated prompts into Stable Diffusion with Canny-edge ControlNet conditioning, decoupling structural guidance via a reference image, and served the system through a FastAPI backend with automated cost and time estimation.</li>
+					</ul>
+				</li>
+				<hr>
+				<li>
+					<h4 class="sub_header">High-Performance OCR Microservice</h4>
+					<p><em>Python, LightOnOCR-2-1B (VLM), vLLM, FastAPI, Docker, Hugging Face Transformers</em></p>
+					<ul>
+						<li>Built an end-to-end OCR microservice around a 1B-parameter vision-language model, replacing brittle multi-stage OCR pipelines with direct image-to-text inference over PDFs, scans and images.</li>
+						<li>Implemented configurable dual-backend inference (Hugging Face for low-VRAM development, vLLM for production throughput), aspect-preserving 200 DPI PDF preprocessing, health and diagnostic endpoints, and containerised deployment via Docker Compose.</li>
+					</ul>
+				</li>
+				<hr>
+				<li>
+					<h4 class="sub_header">StockSage: Multi-Agent AI Financial Research Platform (Ongoing)</h4>
+					<p><em>Python, Groq (Llama-3.3-70B), Pydantic, Pandas, yfinance, Tavily, pytest</em></p>
+					<ul>
+						<li>Developed an agentic research pipeline chaining real-time market fundamentals, 6-month OHLCV history, technical indicators (Wilder's RSI-14, SMA-20/50 implemented from scratch) and filtered news retrieval into a single per-ticker LLM summary.</li>
+						<li>Implemented a generic ToolDispatcher with an agentic loop resolving multi-tool chains automatically, Pydantic-validated structured outputs via function calling, streaming with exponential-backoff retries, and a unit plus integration test suite across five modules.</li>
+					</ul>
+				</li>
+				<hr>
+				<li>
+					<h4 class="sub_header">Building Large Language Models from Scratch</h4>
+					<p><em>PyTorch, Transformers, Multi-Head Attention, BPE Tokenization, tiktoken</em></p>
+					<ul>
+						<li>Implemented a complete GPT-style language model from first principles across 11 progressive modules: BPE tokenization, sliding-window data loaders, token and positional embeddings, multi-head self-attention, causal masking, layer normalisation and cross-entropy training with perplexity tracking.</li>
+						<li>Engineered a weight-mapping pipeline converting pretrained OpenAI GPT-2 (124M) TensorFlow checkpoints into the custom PyTorch architecture for verified text generation and inference.</li>
+					</ul>
+				</li>
+				<hr>
+				<li>
+					<h4 class="sub_header">Interactive Chatbot for Mental Wellbeing</h4>
+					<p><em>Python, PyTorch, GPT-2 Fine-Tuning, Flask, PostgreSQL, React | Team of 4</em></p>
+					<ul>
+						<li>Fine-tuned GPT-2 on 6 domain-specific Hugging Face mental health datasets over 10 epochs (batch size 4, learning rate 3e-5) to generate contextually aware supportive responses, evaluating generation quality with BLEU score.</li>
+						<li>Built the Flask REST API and a four-table PostgreSQL schema handling authentication, interaction logging, ratings and feedback capture, integrated with a React frontend for real-time conversation.</li>
+					</ul>
+				</li>
+				<hr>
+				<li>
+					<h4 class="sub_header">Network Intrusion Detection System (NSL-KDD)</h4>
+					<p><em>Python, Scikit-learn, XGBoost, Pandas, PCA</em></p>
+					<ul>
+						<li>Built an automated ML pipeline for network intrusion detection featuring programmatic Kaggle dataset extraction, categorical encoding, robust feature scaling and optional PCA dimensionality reduction.</li>
+						<li>Benchmarked 7 classifiers (XGBoost, Random Forest, Linear SVM, KNN, Naive Bayes, Decision Tree, Logistic Regression) on accuracy, precision and recall with automated confusion-matrix and feature-importance visualisations.</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<hr>
+
+<div id="certifications" class=" col-lg-12 col-md-12 col-sm-12">
+	<h2 class="main_header">Certifications</h2>
+	<ul class="list-unstyled" style="line-height: 30px;">
+		<li>
+			<ul class="sub_list">
+				<li>The Complete Full-Stack Web Development Bootcamp – Udemy, 2024</li>
+				<li>Hardware Fellowship Program – Locus, 2023</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<hr>
+
+<div class=" col-lg-12 col-md-12 col-sm-12" id="beyond">
+	<h2 class="main_header">Beyond the Lab</h2>
+	<p class="main_para">I ran for student office in a closely contested campus election, narrowly missing out by a handful of votes. It reinforced my interest in leadership and community involvement. Growing up, I was elected school captain, and I picked up a fair share of medals across sports along the way. What I really want going forward is to contribute to something bigger than just my own growth, whether that's mentoring, organizing, or getting involved in community work, not necessarily tied to my career at all.</p>
+</div>
+<hr>
+
+ </div>
+    <!-- /.container-fluid -->
+<p style="text-align: right; color: red;">Last Updated on: September 24, 2026</p>
+</div>
+<!-- /#page-wrapper -->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html> 
