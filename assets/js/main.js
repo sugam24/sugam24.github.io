@@ -163,4 +163,38 @@
       audioStatus.textContent = 'Pronunciation could not play. Please try again.';
     }
   });
+
+  const clock = document.getElementById('sidebar-clock');
+  const clockTime = clock.querySelector('time');
+  const kathmanduTime = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Kathmandu',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
+  let clockTimer;
+
+  function stopClock() {
+    window.clearTimeout(clockTimer);
+  }
+
+  function updateClock() {
+    stopClock();
+    if (document.hidden || !clock.isConnected) return;
+
+    const minute = Math.floor(Date.now() / 60_000) * 60_000;
+    const timestamp = new Date(minute).toISOString();
+    if (clockTime.dateTime !== timestamp) {
+      clockTime.textContent = kathmanduTime.format(minute);
+      clockTime.dateTime = timestamp;
+    }
+    if (clock.hidden) clock.hidden = false;
+    clockTimer = window.setTimeout(updateClock, 60_000 - Date.now() % 60_000);
+  }
+
+  document.addEventListener('visibilitychange', updateClock);
+  window.addEventListener('focus', updateClock);
+  window.addEventListener('pageshow', updateClock);
+  window.addEventListener('pagehide', stopClock);
+  updateClock();
 })();
