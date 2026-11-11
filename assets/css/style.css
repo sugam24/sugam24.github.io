@@ -209,12 +209,21 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
 .education-school { margin-top: 10px; font-size: .9375rem; color: var(--muted); }
 .education-meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; color: var(--muted); font-size: .9375rem; }
 .education-meta strong { color: var(--ink); }
+.project-group + .project-group { margin-top: 36px; }
+.project-group-title { margin-bottom: 14px; color: var(--muted); font: 650 1.0625rem/1.4 var(--sans); }
+.featured-projects { display: grid; gap: 26px; }
 .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 42px; }
-.project-entry { min-width: 0; padding-top: 20px; border-top: 1px solid var(--line); }
-.project-index { display: block; margin-bottom: 12px; color: var(--muted); font: .6875rem/1 var(--mono); letter-spacing: .08em; }
-.project-entry h3 { font-size: 21px; }
-.project-stack { margin-top: 10px; color: var(--accent); font: .8125rem/1.6 var(--mono); }
+.project-entry { min-width: 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.project-entry h4 { margin: 0; font: 400 1.625rem/1.25 var(--serif); letter-spacing: -.015em; }
+.projects-grid h4 { font-size: 1.3125rem; }
+.project-meta { margin-top: 6px; color: var(--muted); font-size: .875rem; }
+.project-status { color: var(--accent); font-weight: 650; }
+.project-description { margin-top: 10px; color: var(--detail-ink); font-size: 1rem; }
+.project-stack { margin-top: 12px; color: var(--accent); font: .8125rem/1.6 var(--mono); }
 .project-entry .detail-list { margin-top: 14px; }
+.featured-projects :is(.project-description, .detail-list, .project-stack) { max-width: 95ch; }
+.project-entry .resource-links { margin-top: 6px; }
+.project-entry .resource-links a:hover { text-decoration-thickness: 2px; }
 .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 32px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 2px; background: var(--rail); }
 .skill-group { padding-top: 12px; border-top: 1px solid var(--line); }
 .skill-group dt { margin-bottom: 7px; color: var(--accent); font-size: 1.0625rem; font-weight: 650; }
@@ -255,7 +264,6 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
   .profile-links { gap: 8px 16px; }
   .about-columns { grid-template-columns: 1fr; gap: 16px; }
   .projects-grid { gap: 28px; }
-  .project-entry h3 { font-size: 20px; }
   .timeline-entry { grid-template-columns: 138px minmax(0, 1fr); column-gap: 24px; }
   .timeline-date { font-size: .75rem; }
 }
