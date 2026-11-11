@@ -96,7 +96,11 @@
       if (section.getBoundingClientRect().top <= offset) current = index;
     });
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
-      current = sections.length - 1;
+      // A section near the footer may be visible without reaching the scroll offset.
+      const targetIndex = links.findIndex(link => link.hash === window.location.hash);
+      const targetTop = sections[targetIndex]?.getBoundingClientRect().top;
+      const scrollPadding = parseFloat(getComputedStyle(root).scrollPaddingTop);
+      current = targetTop > scrollPadding && targetTop < window.innerHeight ? targetIndex : sections.length - 1;
     }
     links.forEach((link, index) => {
       link.classList.toggle('active', index === current);
@@ -113,6 +117,7 @@
   }
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('hashchange', scheduleUpdate);
   window.addEventListener('load', scheduleUpdate);
   updateActiveSection();
 

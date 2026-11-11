@@ -228,11 +228,14 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
 .skill-group { padding-top: 12px; border-top: 1px solid var(--line); }
 .skill-group dt { margin-bottom: 7px; color: var(--accent); font-size: 1.0625rem; font-weight: 650; }
 .skill-group dd { margin: 0; color: var(--muted); font-size: 1rem; }
-.certification-list { padding-left: 18px; color: var(--detail-ink); }
-.certification-list li { padding-left: 4px; }
-.certification-list li + li { margin-top: 10px; }
-.certification-list li::marker { color: var(--accent); }
+.credential-entry { max-width: 38rem; }
+.credential-entry + .credential-entry { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.credential-title { font-size: 1.3125rem; text-wrap: pretty; }
+.credential-affiliation { margin-top: 6px; font: 1.125rem/1.45 var(--serif); }
+.credential-affiliation strong { font-weight: 600; }
+.credential-meta { margin-top: 4px; color: var(--muted); font-size: .9375rem; }
 .beyond-copy { max-width: 95ch; color: var(--muted); }
+.beyond-copy p + p { margin-top: 14px; }
 .site-footer { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 22px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8125rem; }
 .site-updated {
   padding: 8px 12px;
@@ -394,7 +397,7 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
   .profile-header { padding-block: 24px; }
   .profile-links { gap: 12px; }
   .content-section { padding-block: 24px; }
-  .project-entry, .publication-entry, .education-entry { break-inside: avoid; }
+  .project-entry, .publication-entry, .education-entry, .credential-entry { break-inside: avoid; }
   h2, h3 { break-after: avoid; }
   a { text-decoration: none; }
 }
