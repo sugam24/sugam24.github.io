@@ -27,134 +27,143 @@
   themeToggle.hidden = false;
 
   const sidebar = document.getElementById('site-sidebar');
-  const toggle = document.getElementById('menu-toggle');
-  const close = document.getElementById('menu-close');
-  const backdrop = document.getElementById('menu-backdrop');
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const menuBackdrop = document.getElementById('menu-backdrop');
   const menuBackground = document.querySelectorAll('.skip-link, .mobile-topbar, .main-content');
-  const mobile = window.matchMedia('(max-width: 1000px)');
-  const links = [...document.querySelectorAll('.index-link')];
-  const sections = links.map(link => document.querySelector(link.getAttribute('href')));
+  const mobileViewport = window.matchMedia('(max-width: 1000px)');
+  const sectionLinks = [...document.querySelectorAll('.index-link')];
+  const sections = sectionLinks.map(link => document.querySelector(link.getAttribute('href')));
   let menuOpen = false;
 
   function setMenu(open, restoreFocus = true) {
-    menuOpen = open && mobile.matches;
+    menuOpen = open && mobileViewport.matches;
     document.body.classList.toggle('menu-open', menuOpen);
-    toggle.setAttribute('aria-expanded', String(menuOpen));
-    backdrop.hidden = !menuOpen;
-    sidebar.inert = mobile.matches && !menuOpen;
+    menuToggle.setAttribute('aria-expanded', String(menuOpen));
+    menuBackdrop.hidden = !menuOpen;
+    sidebar.inert = mobileViewport.matches && !menuOpen;
+    // Keep the background out of the focus order and accessibility tree while the drawer is modal.
     menuBackground.forEach(element => { element.inert = menuOpen; });
     if (menuOpen) {
       sidebar.setAttribute('role', 'dialog');
       sidebar.setAttribute('aria-modal', 'true');
-      close.focus();
+      menuClose.focus();
     } else {
       sidebar.removeAttribute('role');
       sidebar.removeAttribute('aria-modal');
-      if (restoreFocus && mobile.matches) toggle.focus();
+      if (restoreFocus && mobileViewport.matches) menuToggle.focus();
     }
   }
 
-  toggle.addEventListener('click', () => setMenu(!menuOpen));
-  close.addEventListener('click', () => setMenu(false));
-  backdrop.addEventListener('click', () => setMenu(false));
+  menuToggle.addEventListener('click', () => setMenu(!menuOpen));
+  menuClose.addEventListener('click', () => setMenu(false));
+  menuBackdrop.addEventListener('click', () => setMenu(false));
   sidebar.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', () => {
       scheduleFragmentUpdate();
-      if (mobile.matches) {
-        setMenu(false, false);
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          const hadTabindex = target.hasAttribute('tabindex');
-          if (!hadTabindex) target.setAttribute('tabindex', '-1');
-          window.requestAnimationFrame(() => target.focus({ preventScroll: true }));
-          if (!hadTabindex) {
-            target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
-          }
-        }
+      if (!mobileViewport.matches) return;
+
+      setMenu(false, false);
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+
+      // Let the fragment scroll natively and move focus once the drawer has closed.
+      const hadTabindex = target.hasAttribute('tabindex');
+      if (!hadTabindex) target.setAttribute('tabindex', '-1');
+      window.requestAnimationFrame(() => target.focus({ preventScroll: true }));
+      if (!hadTabindex) {
+        target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
       }
     });
   });
-  mobile.addEventListener('change', () => setMenu(false, false));
+  mobileViewport.addEventListener('change', () => setMenu(false, false));
   setMenu(false, false);
 
-  const pronounce = document.getElementById('pronounce-name');
+  const pronunciationButton = document.getElementById('pronounce-name');
   document.addEventListener('keydown', event => {
-    if (!menuOpen) {
-      if (event.key === 'Escape' && pronounce.matches(':hover, :focus-visible')) {
-        pronounce.dataset.tooltipDismissed = '';
+    if (event.key === 'Escape') {
+      if (menuOpen) {
+        event.preventDefault();
+        setMenu(false);
+      } else if (pronunciationButton.matches(':hover, :focus-visible')) {
+        pronunciationButton.dataset.tooltipDismissed = '';
       }
       return;
     }
-    if (event.key === 'Escape') {
+    if (!menuOpen || event.key !== 'Tab') return;
+
+    const focusable = [...sidebar.querySelectorAll('a[href], button:not([disabled])')]
+      .filter(element => element.getClientRects().length > 0);
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
       event.preventDefault();
-      setMenu(false);
-    }
-    if (event.key === 'Tab') {
-      const focusable = [...sidebar.querySelectorAll('a[href], button:not([disabled])')]
-        .filter(element => element.getClientRects().length > 0);
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
     }
   });
 
-  let scheduled = false;
-  let wasAtEnd = false;
-  let followEndFragment = true;
+  let sectionUpdateQueued = false;
+  let wasAtPageEnd = false;
+  let preferFragmentAtPageEnd = true;
+
   function updateActiveSection() {
-    const offset = mobile.matches ? 150 : 140;
-    let current = 0;
+    const offset = mobileViewport.matches ? 150 : 140;
+    let activeSectionIndex = 0;
     sections.forEach((section, index) => {
-      if (section.getBoundingClientRect().top <= offset) current = index;
+      if (section.getBoundingClientRect().top <= offset) activeSectionIndex = index;
     });
-    const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-    if (atEnd) {
-      // A section near the footer may be visible without reaching the scroll offset.
-      const targetIndex = followEndFragment ? links.findIndex(link => link.hash === window.location.hash) : -1;
+    const atPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (atPageEnd) {
+      // Honor a visible fragment if the footer prevents it from reaching the scroll offset.
+      const targetIndex = preferFragmentAtPageEnd
+        ? sectionLinks.findIndex(link => link.hash === window.location.hash)
+        : -1;
       const targetTop = sections[targetIndex]?.getBoundingClientRect().top;
       const scrollPadding = parseFloat(getComputedStyle(root).scrollPaddingTop);
-      current = targetTop > scrollPadding && targetTop < window.innerHeight ? targetIndex : sections.length - 1;
-    } else if (wasAtEnd) {
-      followEndFragment = false;
+      activeSectionIndex = targetTop > scrollPadding && targetTop < window.innerHeight
+        ? targetIndex
+        : sections.length - 1;
+    } else if (wasAtPageEnd) {
+      // After scrolling away, the viewport determines the active item again.
+      preferFragmentAtPageEnd = false;
     }
-    wasAtEnd = atEnd;
-    links.forEach((link, index) => {
-      link.classList.toggle('active', index === current);
-      if (index === current) link.setAttribute('aria-current', 'location');
+    wasAtPageEnd = atPageEnd;
+    sectionLinks.forEach((link, index) => {
+      link.classList.toggle('active', index === activeSectionIndex);
+      if (index === activeSectionIndex) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
-    scheduled = false;
+    sectionUpdateQueued = false;
   }
-  function scheduleUpdate() {
-    if (!scheduled) {
-      scheduled = true;
-      window.requestAnimationFrame(updateActiveSection);
-    }
+
+  function scheduleActiveSectionUpdate() {
+    if (sectionUpdateQueued) return;
+    sectionUpdateQueued = true;
+    window.requestAnimationFrame(updateActiveSection);
   }
+
   function scheduleFragmentUpdate() {
-    followEndFragment = true;
-    scheduleUpdate();
+    preferFragmentAtPageEnd = true;
+    scheduleActiveSectionUpdate();
   }
-  window.addEventListener('scroll', scheduleUpdate, { passive: true });
-  window.addEventListener('resize', scheduleUpdate);
+
+  window.addEventListener('scroll', scheduleActiveSectionUpdate, { passive: true });
+  window.addEventListener('resize', scheduleActiveSectionUpdate);
   window.addEventListener('hashchange', scheduleFragmentUpdate);
-  window.addEventListener('load', scheduleUpdate);
+  window.addEventListener('load', scheduleActiveSectionUpdate);
   updateActiveSection();
 
   const audio = document.getElementById('name-audio');
   const audioStatus = document.getElementById('audio-status');
   function resetPronunciationTooltip() {
-    delete pronounce.dataset.tooltipDismissed;
+    delete pronunciationButton.dataset.tooltipDismissed;
   }
-  pronounce.addEventListener('pointerenter', resetPronunciationTooltip);
-  pronounce.addEventListener('focus', resetPronunciationTooltip);
-  pronounce.addEventListener('click', async () => {
+  pronunciationButton.addEventListener('pointerenter', resetPronunciationTooltip);
+  pronunciationButton.addEventListener('focus', resetPronunciationTooltip);
+  pronunciationButton.addEventListener('click', async () => {
     audioStatus.textContent = '';
     try {
       audio.currentTime = 0;
@@ -166,7 +175,9 @@
 
   const clock = document.getElementById('sidebar-clock');
   const clockTime = clock.querySelector('time');
-  const kathmanduTime = new Intl.DateTimeFormat('en-US', {
+  const minuteMs = 60_000;
+  // Format for Kathmandu even when the visitor's device is in another time zone.
+  const kathmanduTimeFormatter = new Intl.DateTimeFormat('en-US', {
     timeZone: 'Asia/Kathmandu',
     hour: '2-digit',
     minute: '2-digit',
@@ -182,14 +193,15 @@
     stopClock();
     if (document.hidden || !clock.isConnected) return;
 
-    const minute = Math.floor(Date.now() / 60_000) * 60_000;
-    const timestamp = new Date(minute).toISOString();
+    const minuteStart = Math.floor(Date.now() / minuteMs) * minuteMs;
+    const timestamp = new Date(minuteStart).toISOString();
     if (clockTime.dateTime !== timestamp) {
-      clockTime.textContent = kathmanduTime.format(minute);
+      clockTime.textContent = kathmanduTimeFormatter.format(minuteStart);
       clockTime.dateTime = timestamp;
     }
     if (clock.hidden) clock.hidden = false;
-    clockTimer = window.setTimeout(updateClock, 60_000 - Date.now() % 60_000);
+    // Schedule from the wall clock so delayed callbacks do not shift future updates.
+    clockTimer = window.setTimeout(updateClock, minuteMs - Date.now() % minuteMs);
   }
 
   document.addEventListener('visibilitychange', updateClock);

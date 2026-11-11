@@ -184,6 +184,7 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
 .resource-links a { display: inline-flex; align-items: center; min-height: 32px; max-width: 100%; overflow-wrap: anywhere; font-size: .9375rem; color: var(--accent); }
 
 .research-interests { max-width: 95ch; margin-bottom: 26px; color: var(--muted); }
+/* Research and professional roles share the timeline layout. */
 .timeline-entry { display: grid; grid-template-columns: 155px minmax(0, 1fr); column-gap: 30px; row-gap: 8px; }
 .timeline-entry + .timeline-entry { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
 .timeline-title { grid-column: 2; grid-row: 1; }
@@ -211,6 +212,7 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
 .education-school { margin-top: 10px; font-size: .9375rem; color: var(--muted); }
 .education-meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 8px; color: var(--muted); font-size: .9375rem; }
 .education-meta strong { color: var(--ink); }
+/* Featured projects stack vertically, and additional projects share a grid. */
 .project-group + .project-group { margin-top: 36px; }
 .project-group-title { margin-bottom: 14px; color: var(--muted); font: 650 1.0625rem/1.4 var(--sans); }
 .featured-projects { display: grid; gap: 26px; }
@@ -294,6 +296,7 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
   .sidebar-cv { margin-top: 12px; padding-top: 10px; }
 }
 
+/* The mobile drawer breakpoint also controls matchMedia in main.js. */
 @media (max-width: 1000px) {
   html { scroll-padding-top: 90px; }
   .main-content { margin-left: 0; padding-inline: 6vw; }
