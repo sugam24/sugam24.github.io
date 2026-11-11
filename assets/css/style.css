@@ -100,8 +100,10 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .name-row { display: flex; align-items: center; gap: 18px; }
 h1 { font: 400 clamp(52px, 5.5vw, 98px)/1.08 var(--serif); letter-spacing: -.055em; }
 .name-period { color: var(--accent); }
-.pronounce-button { position: relative; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--muted); }
-.pronounce-button:hover { color: var(--accent); border-color: var(--accent); }
+.pronounce-button { position: relative; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 36px; height: 36px; border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--muted); }
+.pronounce-button::before { content: ""; position: absolute; inset: 0; border: 1px solid var(--line); border-radius: inherit; pointer-events: none; }
+.pronounce-button:hover { color: var(--accent); }
+.pronounce-button:hover::before { border-color: var(--accent); }
 .pronounce-tooltip {
   position: absolute;
   z-index: 1;
@@ -129,7 +131,8 @@ h1 { font: 400 clamp(52px, 5.5vw, 98px)/1.08 var(--serif); letter-spacing: -.055
 .profile-links a span { color: var(--accent); font-size: 14px; }
 .profile-links .cv-link { padding: 5px 12px; border: 1px solid var(--ink); border-radius: 2px; }
 .profile-links .cv-link:hover { border-color: var(--accent); }
-.profile-portrait { align-self: center; }
+/* Preserve the portrait's vertical position beside the centered hero copy. */
+.profile-portrait { align-self: center; margin-block-end: calc(10px + 1.03125rem); }
 .profile-photo-frame { height: 246px; overflow: hidden; border-radius: 3px; }
 .profile-portrait img {
   display: block;
@@ -141,8 +144,6 @@ h1 { font: 400 clamp(52px, 5.5vw, 98px)/1.08 var(--serif); letter-spacing: -.055
   transform-origin: 50% 18%;
   filter: saturate(.8);
 }
-.profile-portrait figcaption { display: flex; align-items: center; gap: 9px; margin-top: 10px; color: var(--muted); font: .6875rem/1.5 var(--mono); text-transform: uppercase; letter-spacing: .05em; }
-.portrait-rule { width: 20px; height: 1px; background: var(--accent); }
 
 .selected-highlights { padding: 14px 0 18px; border-top: 1px solid var(--line); }
 .selected-highlights h2 { margin-bottom: 10px; font-size: 1.125rem; letter-spacing: 0; }
@@ -332,14 +333,14 @@ h3 { font: 400 23px/1.4 var(--serif); letter-spacing: -.015em; }
   .name-row { grid-column: 1; grid-row: 1; gap: 10px; align-self: center; }
   h1 { font-size: clamp(36px, 6.7vw, 48px); }
   .pronounce-button { width: 30px; height: 30px; }
+  .pronounce-button::before { inset: -1px; }
   .pronounce-button svg { width: 14px; height: 14px; }
   .profile-focus { grid-column: 1; grid-row: 2; margin: 0; font-size: 20px; text-wrap: balance; }
   .profile-institution { grid-column: 1 / -1; grid-row: 3; margin-top: 2px; }
   .profile-email { grid-column: 1 / -1; grid-row: 4; margin-top: 0; }
   .profile-links { grid-column: 1 / -1; grid-row: 5; margin-top: 0; gap: 8px 18px; }
-  .profile-portrait { grid-column: 2; grid-row: 1 / 3; align-self: start; }
+  .profile-portrait { grid-column: 2; grid-row: 1 / 3; align-self: start; margin-block-end: 0; }
   .profile-photo-frame { height: 142px; }
-  .profile-portrait figcaption { display: none; }
   .highlight-list { grid-template-columns: 1fr; }
   .highlight-list li + li { border-inline-start: 0; border-top: 1px solid var(--line); }
   .highlight-list a { padding: 5px 0; }
