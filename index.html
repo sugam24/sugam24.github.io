@@ -1,316 +1,144 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Sugam</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="shortcut icon" type="image/png" href="assets/img/sugam.png">
-<link rel="icon" type="image/png" href="assets/img/sugam.png">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Sugam Dahal — Computer Engineer and AI/ML Researcher in Kathmandu, Nepal. Research, publications, and projects in computer vision, deep learning, and large language models." name="description"/>
+<meta content="#faf9f5" name="theme-color"/>
+<title>Sugam Dahal · Research &amp; Engineering</title>
+<link href="assets/img/sugam.png" rel="icon" type="image/png"/>
 <script>
-$(document).ready(function(){
-
-  $("a").on('click', function(event) {
-
-  
-    if (this.hash !== "") {
-     
-      event.preventDefault();
-
-      
-      var hash = this.hash;
-
-
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 80, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
+  try {
+    if (localStorage.getItem('portfolio-theme') === 'dark') {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  } catch {
+    // The page uses its default light colors if storage is unavailable.
+  }
 </script>
+<link href="assets/css/style.css?v=20261111-3" rel="stylesheet"/>
+<script defer="" src="assets/js/main.js?v=20261111-3"></script>
 </head>
-<body >
-<div class="page-wrapper" id="page-wrapper" style="margin: 20px; border: solid; padding: 5px;">
-    
-
-    
-    <div class="container-fluid">
-        <!-- Page Heading -->
-
-        <div class="row">
-            <div class="col-md-9 col-12">
-                	<h2 class="page-header"><a href="#">Sugam Dahal&nbsp</a>
-						<a href="#" onclick="document.getElementById('name_play').play(); "><img src="assets/img/speaker.png" style="height: 30px;" alt="Pronounce"></a>
-					</h2>
-					<audio id="name_play" src="assets/audio/sugam.wav"></audio>
-                	<strong>Computer Engineer | AI/ML Researcher</strong><br>
-					<strong>Institute of Engineering (IOE), Thapathali Campus, Kathmandu, Nepal</strong>
-                	<p style="color: blue;">Email: <!-- Add your email here -->dahalsugam24@gmail.com</p>
-                	<p><a  href="assets/docs/Sugam_Resume.pdf" target="_blank">CV</a> | <a target="_blank" href="https://github.com/sugam24/">GitHub</a> | <a target="_blank" href="https://www.linkedin.com/in/sugam-dahal24s/">LinkedIn</a> | <a target="_blank" href="https://orcid.org/0009-0004-0786-6656">ORCID</a> | <a target="_blank" href="https://huggingface.co/sugam24">Hugging Face</a>
-                	</p>   	
-            </div>
-            <div class="col-12 col-md-3">
-            	<img src="assets/img/sugam.png" style="width:80%; float: center;">
-            </div>
-        </div>
-         <hr>
-
-<!-- A grey horizontal navbar that becomes vertical on small screens -->
-<nav  class="navbar navbar-expand-sm bg-light">
-
-  <!-- Links -->
-  <ul class="navbar-nav  nav-fill w-100">
-    <li class="nav-item">
-      <a class="nav-link" href="#about">About me</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#education">Education</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#experience">Experience</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#research">Research</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#publications">Publications</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#skills">Technical Skills</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link"  href="#projects">Projects</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#certifications">Certifications</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#beyond">Beyond the Lab</a>
-    </li>
-  </ul>
-
-</nav>
-<hr>
-<div class=" col-lg-12 col-md-12 col-sm-12" id="about">
-	<h2  class="main_header">About me</h2>
-	
-	<p  class="main_para">I'm Sugam, a Computer Engineering graduate from the Institute of Engineering (IOE), Thapathali Campus, Kathmandu, working at the intersection of deep learning, computer vision, and large language models. I got my start building a GPT-style language model from scratch, tokenizer up, and that habit of understanding systems from the ground up has carried through production ML work and into research, and it's now pulling me toward agentic AI.</p>
-	<p class="main_para">I care about the full loop: data pipelines, training, evaluation, and deployment, not just getting something to work in a notebook. Outside research, I follow football and cricket closely, and I've always been drawn to geography and politics.</p>
+<body id="top">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="mobile-topbar">
+<a class="mobile-brand" href="#top"><span aria-hidden="true" class="monogram">sd.</span>Sugam Dahal</a>
+<button aria-controls="site-sidebar" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button"><span>Menu</span><svg aria-hidden="true" fill="none" height="20" viewBox="0 0 20 20" width="20"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.4"></path></svg></button>
 </div>
-<hr>
-
-<div class=" col-lg-12 col-md-12 col-sm-12" id="education">
-	<h2 class="main_header">Education</h2>
-	<ul class="list-unstyled">
-		<li>
-			<h4 class="sub_header">Undergraduate</h4>
-			<ul class="sub_list">
-				<li><b>Apr 2022 &ndash; Aug 2026</b>, Bachelor of Engineering in Computer Engineering | 78.56%</li>
-				<li>Institute of Engineering (IOE), Thapathali Campus, Kathmandu, Nepal</li>
-			</ul>
-		</li>
-		<hr>
-		<li>
-			<h4 class="sub_header">Higher Secondary</h4>
-			<ul class="sub_list">
-				<li><b>Jun 2019 &ndash; Dec 2021</b>, Higher Secondary Education (Science) | GPA 3.59 / 4.00</li>
-				<li>Global School of Science, Kathmandu, Nepal</li>
-			</ul>
-		</li>
-		<hr>
-		<li>
-			<h4 class="sub_header">Secondary</h4>
-			<ul class="sub_list">
-				<li><b>Graduated: 2019</b>, Secondary Education Examination (SEE) | GPA 3.90 / 4.00</li>
-				<li>Reliance International Academy, Kathmandu, Nepal</li>
-			</ul>
-		</li>
-	</ul>
-	
+<button aria-label="Close navigation" class="menu-backdrop" hidden="" id="menu-backdrop" tabindex="-1" type="button"></button>
+<aside aria-label="Site navigation" class="sidebar" id="site-sidebar">
+<div class="sidebar-brand-row">
+<a aria-label="Sugam Dahal, back to top" class="sidebar-brand" href="#top"><span aria-hidden="true" class="monogram">sd.</span><span>SUGAM DAHAL<span class="brand-caption">Research &amp; engineering</span></span></a>
+<button aria-label="Close navigation" class="menu-close" id="menu-close" type="button">×</button>
 </div>
-<hr>
-
-<div class=" col-lg-12 col-md-12 col-sm-12" id="experience">
-	<h2 class="main_header">Professional Experience</h2>
-	
-	<ul class="list-unstyled">
-		<li>
-			<h4 class="sub_header">AI Research Intern</h4>
-			<p class=""><b>Dec 2025 &ndash; Mar 2026</b> <span style="color: blue;">Wise Yak Solutions Pvt. Ltd., Kathmandu, Nepal</span></p>
-			<ul class="sub_list">
-				<li>Engineered a production-ready OCR pipeline built on a 1B-parameter vision-language model, extracting structured text, dense tables and mathematical notation from complex document layouts.</li>
-				<li>Architected a dual-engine inference backend using standard PyTorch for local development and vLLM with PagedAttention for high-throughput production serving, packaged behind a FastAPI service with Docker deployment.</li>
-				<li>Evaluated post-training quantization methods (GPTQ, AWQ) for LLM inference, comparing memory footprint and output quality to inform deployment decisions on constrained hardware.</li>
-				<li>Investigated custom neural network architectures and algorithm optimization within the AI Research Team, supporting applied computer vision research and deployment.</li>
-			</ul>
-		</li>
-	</ul>
+<div class="sidebar-index"><p class="small-label">On this page</p><nav aria-label="Main navigation" class="section-index"><a class="index-link" href="#about"><span aria-hidden="true" class="index-number">01</span>About me</a>
+<a class="index-link" href="#education"><span aria-hidden="true" class="index-number">02</span>Education</a>
+<a class="index-link" href="#experience"><span aria-hidden="true" class="index-number">03</span>Professional Experience</a>
+<a class="index-link" href="#research"><span aria-hidden="true" class="index-number">04</span>Research Experience</a>
+<a class="index-link" href="#publications"><span aria-hidden="true" class="index-number">05</span>Publications</a>
+<a class="index-link" href="#skills"><span aria-hidden="true" class="index-number">06</span>Technical Skills</a>
+<a class="index-link" href="#projects"><span aria-hidden="true" class="index-number">07</span>Projects</a>
+<a class="index-link" href="#certifications"><span aria-hidden="true" class="index-number">08</span>Certifications</a>
+<a class="index-link" href="#beyond"><span aria-hidden="true" class="index-number">09</span>Beyond the Lab</a></nav></div>
+<div class="sidebar-footer">
+<p class="small-label">Get in touch</p>
+<a class="sidebar-email" href="mailto:dahalsugam24@gmail.com">dahalsugam24@gmail.com <span aria-hidden="true">↗</span></a>
+<p class="sidebar-location">Based in Kathmandu, Nepal</p>
+<a class="sidebar-cv" href="assets/docs/Sugam_Resume.pdf" rel="noopener noreferrer" target="_blank">Curriculum vitae <span aria-hidden="true">↗</span></a>
 </div>
-<hr>
-
-<div class=" col-lg-12 col-md-12 col-sm-12" id="research">
-	<h2 class="main_header">Research Experience</h2>
-	
-	<p class="sub_list" style="margin-bottom: 20px;">My research interests lie broadly in deep learning, with particular focus on computer vision, large language models, NLP, generative models, and reinforcement learning. I'm increasingly drawn to mechanistic interpretability and representation learning, trying to understand not just how these systems perform, but why they work the way they do. Whether that leads to theoretical insight or a deployable system, what matters most to me is doing the work with rigor.</p>
-
-	<ul class="list-unstyled">
-		<li>
-			<h4 class="sub_header">Independent Researcher — Land-Use Segmentation and Generative Augmentation</h4>
-			<p class=""><b>May 2026 &ndash; Present</b> <span style="color: blue;">Dept. of Electronics and Computer Engineering, IOE Thapathali Campus, Kathmandu, Nepal</span></p>
-			<ul class="sub_list">
-				<li>Built and released a six-class land-use segmentation benchmark covering 202.4 km² of the Kathmandu Valley across 408 hand-annotated fine-resolution scenes, published on Zenodo with fold definitions, metric records and trained weights (DOI: 10.5281/zenodo.22349064).</li>
-				<li>Designed and validated a full evaluation protocol across five architectures (U-Net, UNetFormer, SegFormer-B0, SegNeXt-T, proposed) and two data partitioning regimes, quantifying that split protocol alone shifts reported mIoU by 0.051–0.095, an effect larger than any architectural difference.</li>
-				<li>Developed a thin-structure-aware segmentation model adding a residual detail path, boundary-reliability reweighting, a clDice topology loss and a presence-balanced sampler to a SegFormer-B0 backbone, improving on the backbone in every fold-run for 1.9% additional parameters.</li>
-				<li>Implemented a two-stage diffusion generator (mask DDPM plus LoRA-adapted Stable Diffusion with a class-channel ControlNet) and a compute-matched downstream evaluation with bootstrap confidence intervals.</li>
-			</ul>
-		</li>
-	</ul>
+</aside>
+<main class="main-content" id="main-content" tabindex="-1">
+<div class="masthead">
+<span>Personal site</span>
+<span class="masthead-location">Kathmandu, Nepal <span aria-hidden="true" class="masthead-dot">·</span> 2026</span>
+<button aria-label="Switch to dark mode" class="theme-toggle" id="theme-toggle" type="button" hidden><span aria-hidden="true" class="theme-icon"></span></button>
 </div>
-<hr>
+<header class="profile-header">
+<div class="profile-copy">
 
-<div class=" col-lg-12 col-md-12 col-sm-12" id="publications">
-	<h2 class="main_header">Publications</h2>
-	<ul class="list-unstyled">
-		<li>
-			<h4 class="sub_header">Preprint</h4>
-			<ul class="sub_list">
-				<li>
-					<p>Parajuli, P., Dahal, S., &amp; Dahal, K. C. (2026). Fine-resolution land-use segmentation and synthetic image-label augmentation in the Kathmandu Valley [Preprint]. arXiv:2611.10847.</p>
-					<p><strong>Submitted for journal publication.</strong></p>
-					<p><a href="https://arxiv.org/abs/2611.10847" target="_blank" rel="noopener noreferrer">[arXiv]</a> | <a href="https://arxiv.org/pdf/2611.10847" target="_blank" rel="noopener noreferrer">[PDF]</a></p>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<h4 class="sub_header">Dataset</h4>
-			<ul class="sub_list">
-				<li>
-					<p>Parajuli, P., &amp; Dahal, S. (2026). Kathmandu Valley Land-Use and Land-Cover Segmentation Dataset (Version 1) [Dataset]. Zenodo. <a href="https://doi.org/10.5281/zenodo.22349064" target="_blank">https://doi.org/10.5281/zenodo.22349064</a></p>
-					<p><a href="https://zenodo.org/records/22349064" target="_blank">[Zenodo Record]</a></p>
-				</li>
-			</ul>
-		</li>
-	</ul>
+<div class="name-row"><h1>Sugam Dahal</h1><button aria-label="Hear how to pronounce Sugam Dahal" class="pronounce-button" id="pronounce-name" type="button"><svg aria-hidden="true" fill="none" height="18" viewBox="0 0 24 24" width="18"><path d="M11 4 5.5 8H2v8h3.5l5.5 4V4Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path><path d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg></button></div>
+<p class="profile-focus">Computer Engineer | AI/ML Researcher</p>
+<p class="profile-institution">Institute of Engineering (IOE), Thapathali Campus, Kathmandu, Nepal</p><p class="profile-email">Email: <a href="mailto:dahalsugam24@gmail.com">dahalsugam24@gmail.com</a></p>
+<div aria-label="Professional profiles" class="profile-links">
+<a class="cv-link" href="assets/docs/Sugam_Resume.pdf" rel="noopener noreferrer" target="_blank">CV <span aria-hidden="true">↗</span></a>
+<a href="https://github.com/sugam24/" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+<a href="https://www.linkedin.com/in/sugam-dahal24s/" rel="noopener noreferrer" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+<a href="https://orcid.org/0009-0004-0786-6656" rel="noopener noreferrer" target="_blank">ORCID <span aria-hidden="true">↗</span></a>
+<a href="https://huggingface.co/sugam24" rel="noopener noreferrer" target="_blank">Hugging Face <span aria-hidden="true">↗</span></a>
 </div>
-<hr>
-
-<div class=" col-lg-12 col-md-12 col-sm-12" id="skills">
-	<h2 class="main_header">Technical Skills</h2>
-	<ul class="list-unstyled">
-		<li>
-			<ul class="sub_list">
-				<li><b>Programming Languages:</b> Python, C++, JavaScript, SQL, Bash, LaTeX</li>
-				<li><b>Machine Learning &amp; Deep Learning:</b> PyTorch, TensorFlow, Scikit-learn, XGBoost, Hugging Face Transformers, Neural Networks, CNN, RNN, Transformers, Semantic Segmentation, Diffusion Models, Transfer Learning, Fine-Tuning, LoRA / PEFT, Model Quantization (GPTQ, AWQ), Mixed-Precision Training</li>
-				<li><b>LLMs &amp; NLP:</b> Large Language Models, GPT-2 Fine-Tuning, BPE Tokenization, Multi-Head Attention, Function Calling, Structured Outputs, Agentic Workflows, Prompt Engineering, LLM Evaluation (BLEU, Perplexity)</li>
-				<li><b>Computer Vision:</b> Image Segmentation, Vision-Language Models, OCR, SegFormer, U-Net, Stable Diffusion, ControlNet, Albumentations, CVAT</li>
-				<li><b>MLOps &amp; Deployment:</b> FastAPI, Flask, vLLM, Docker, REST APIs, Git, GitHub, Linux, PostgreSQL, Weights &amp; Biases, pytest, Pydantic, CUDA, Google Colab, Hugging Face Hub</li>
-				<li><b>Data Science &amp; Statistics:</b> NumPy, Pandas, Matplotlib, Seaborn, Data Preprocessing, Feature Engineering, PCA, Cross-Validation, Bootstrap Confidence Intervals, Experiment Design, Statistical Analysis, Data Visualization</li>
-			</ul>
-		</li>
-	</ul>
+<audio id="name-audio" preload="none" src="assets/audio/sugam.wav"></audio>
+<span class="visually-hidden" id="audio-status" role="status"></span>
 </div>
-<hr>
+<figure class="profile-portrait"><img alt="Sugam Dahal" fetchpriority="high" height="252" src="assets/img/sugam.png" width="220"/><figcaption><span aria-hidden="true" class="portrait-rule"></span>Kathmandu, Nepal</figcaption></figure>
+</header>
 
-<div id="projects" class=" col-lg-12 col-md-12 col-sm-12">
-	<h2 class="main_header">Selective Projects</h2>
-	<ul class="list-unstyled" style="line-height: 30px;">
-		<li>
-			<ul class="sub_list">
-				<li>
-					<h4 class="sub_header">GeoNUSAF: GeoSpatial Neural Urban Synthesis and Analysis Framework</h4>
-					<p><em>PyTorch, SegFormer, Stable Diffusion, ControlNet, FastAPI, Weights &amp; Biases | Team of 4</em></p>
-					<ul>
-						<li>Fine-tuned a SegFormer-B0 backbone for 7-class urban land-use segmentation on 512x512 satellite imagery, using class-weighted cross-entropy for imbalance, albumentations-based augmentation and 3-fold cross-validation, reaching 0.50–0.60 validation mIoU with experiment tracking in Weights &amp; Biases.</li>
-						<li>Built a generative urban-planning pipeline feeding segmentation masks and templated prompts into Stable Diffusion with Canny-edge ControlNet conditioning, decoupling structural guidance via a reference image, and served the system through a FastAPI backend with automated cost and time estimation.</li>
-					</ul>
-				</li>
-				<hr>
-				<li>
-					<h4 class="sub_header">High-Performance OCR Microservice</h4>
-					<p><em>Python, LightOnOCR-2-1B (VLM), vLLM, FastAPI, Docker, Hugging Face Transformers</em></p>
-					<ul>
-						<li>Built an end-to-end OCR microservice around a 1B-parameter vision-language model, replacing brittle multi-stage OCR pipelines with direct image-to-text inference over PDFs, scans and images.</li>
-						<li>Implemented configurable dual-backend inference (Hugging Face for low-VRAM development, vLLM for production throughput), aspect-preserving 200 DPI PDF preprocessing, health and diagnostic endpoints, and containerised deployment via Docker Compose.</li>
-					</ul>
-				</li>
-				<hr>
-				<li>
-					<h4 class="sub_header">StockSage: Multi-Agent AI Financial Research Platform</h4>
-					<p><em>Python, LangGraph, ChromaDB, Groq, FastAPI, Streamlit, Docker, pytest</em></p>
-					<ul>
-						<li>Built a six-agent LangGraph workflow combining live market data, SEC filings and financial news with hybrid semantic/BM25 retrieval and neural reranking to generate citation-grounded equity research reports.</li>
-						<li>Implemented deterministic risk metrics, human approval checkpoints and critic-guided report revision; delivered a FastAPI backend and Streamlit dashboard with Docker Compose deployment and GitHub Actions CI covering 114+ offline unit tests.</li>
-					</ul>
-				</li>
-				<hr>
-				<li>
-					<h4 class="sub_header">Building Large Language Models from Scratch</h4>
-					<p><em>PyTorch, Transformers, Multi-Head Attention, BPE Tokenization, tiktoken</em></p>
-					<ul>
-						<li>Implemented a complete GPT-style language model from first principles across 11 progressive modules: BPE tokenization, sliding-window data loaders, token and positional embeddings, multi-head self-attention, causal masking, layer normalisation and cross-entropy training with perplexity tracking.</li>
-						<li>Engineered a weight-mapping pipeline converting pretrained OpenAI GPT-2 (124M) TensorFlow checkpoints into the custom PyTorch architecture for verified text generation and inference.</li>
-					</ul>
-				</li>
-				<hr>
-				<li>
-					<h4 class="sub_header">Interactive Chatbot for Mental Wellbeing</h4>
-					<p><em>Python, PyTorch, GPT-2 Fine-Tuning, Flask, PostgreSQL, React | Team of 4</em></p>
-					<ul>
-						<li>Fine-tuned GPT-2 on 6 domain-specific Hugging Face mental health datasets over 10 epochs (batch size 4, learning rate 3e-5) to generate contextually aware supportive responses, evaluating generation quality with BLEU score.</li>
-						<li>Built the Flask REST API and a four-table PostgreSQL schema handling authentication, interaction logging, ratings and feedback capture, integrated with a React frontend for real-time conversation.</li>
-					</ul>
-				</li>
-				<hr>
-				<li>
-					<h4 class="sub_header">Network Intrusion Detection System (NSL-KDD)</h4>
-					<p><em>Python, Scikit-learn, XGBoost, Pandas, PCA</em></p>
-					<ul>
-						<li>Built an automated ML pipeline for network intrusion detection featuring programmatic Kaggle dataset extraction, categorical encoding, robust feature scaling and optional PCA dimensionality reduction.</li>
-						<li>Benchmarked 7 classifiers (XGBoost, Random Forest, Linear SVM, KNN, Naive Bayes, Decision Tree, Logistic Regression) on accuracy, precision and recall with automated confusion-matrix and feature-importance visualisations.</li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-	</ul>
+<section aria-labelledby="about-title" class="content-section" id="about"><div class="section-heading"><span aria-hidden="true" class="section-number">01</span><h2 id="about-title">About me</h2></div><div class="about-columns"><p>I'm Sugam, a Computer Engineering graduate from the Institute of Engineering (IOE), Thapathali Campus, Kathmandu, working at the intersection of deep learning, computer vision, and large language models. I got my start building a GPT-style language model from scratch, tokenizer up, and that habit of understanding systems from the ground up has carried through production ML work and into research, and it's now pulling me toward agentic AI.</p>
+<p>I care about the full loop: data pipelines, training, evaluation, and deployment, not just getting something to work in a notebook. Outside research, I follow football and cricket closely, and I've always been drawn to geography and politics.</p></div></section>
+<section aria-labelledby="education-title" class="content-section" id="education"><div class="section-heading"><span aria-hidden="true" class="section-number">02</span><h2 id="education-title">Education</h2></div><div class="education-grid"><article class="education-entry"><h3>Undergraduate</h3><p class="education-qualification"><b>Apr 2022 – Aug 2026</b>, Bachelor of Engineering in Computer <span class="education-result">Engineering | 78.56%</span></p><p class="education-school"><a class="affiliation-link" href="https://tcioe.edu.np/">Institute of Engineering (IOE), Thapathali Campus</a>, Kathmandu, Nepal</p></article>
+<article class="education-entry"><h3>Higher Secondary</h3><p class="education-qualification"><b>Jun 2019 – Dec 2021</b>, Higher Secondary Education (Science) | GPA 3.59 / 4.00</p><p class="education-school"><a class="affiliation-link" href="https://gss.edu.np/">Global School of Science</a>, Kathmandu, Nepal</p></article>
+<article class="education-entry"><h3>Secondary</h3><p class="education-qualification"><b>Graduated: 2019</b>, Secondary Education Examination (SEE) | GPA 3.90 / 4.00</p><p class="education-school"><a class="affiliation-link" href="https://riaschool.edu.np/">Reliance International Academy</a>, Kathmandu, Nepal</p></article></div></section>
+<section aria-labelledby="experience-title" class="content-section" id="experience"><div class="section-heading"><span aria-hidden="true" class="section-number">03</span><h2 id="experience-title">Professional Experience</h2></div>
+<article class="timeline-entry">
+<h3 class="timeline-title">LLM Security Engineer</h3>
+<div class="timeline-meta">
+<p class="timeline-date">Oct 2026 – Present</p>
+<p class="entry-affiliation">CONFIDENTIAL</p>
 </div>
-<hr>
-
-<div id="certifications" class=" col-lg-12 col-md-12 col-sm-12">
-	<h2 class="main_header">Certifications</h2>
-	<ul class="list-unstyled" style="line-height: 30px;">
-		<li>
-			<ul class="sub_list">
-				<li>The Complete Full-Stack Web Development Bootcamp – Udemy, 2024</li>
-				<li>Hardware Fellowship Program – Locus, 2023</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-<hr>
-
-<div class=" col-lg-12 col-md-12 col-sm-12" id="beyond">
-	<h2 class="main_header">Beyond the Lab</h2>
-	<p class="main_para">I ran for student office in a closely contested campus election, narrowly missing out by a handful of votes. It reinforced my interest in leadership and community involvement. Growing up, I was elected school captain, and I picked up a fair share of medals across sports along the way. What I really want going forward is to contribute to something bigger than just my own growth, whether that's mentoring, organizing, or getting involved in community work, not necessarily tied to my career at all.</p>
-</div>
-<hr>
-
- </div>
-    <!-- /.container-fluid -->
-<p style="text-align: right; color: red;">Last Updated on: November 10, 2026</p>
-</div>
-<!-- /#page-wrapper -->
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<ul class="detail-list"><li>Conduct LLM red teaming and security assessments to identify model vulnerabilities and evaluate safeguards.</li></ul>
+</article>
+<article class="timeline-entry">
+<h3 class="timeline-title">AI Research Intern</h3>
+<div class="timeline-meta"><p class="timeline-date">Dec 2025 – May 2026</p><p class="entry-affiliation"><a class="affiliation-link" href="https://www.wiseyak.com/">Wise Yak Solutions Pvt. Ltd.</a>, Kathmandu, Nepal</p></div>
+<ul class="detail-list"><li>Engineered a production-ready OCR pipeline built on a 1B-parameter vision-language model, extracting structured text, dense tables and mathematical notation from complex document layouts.</li><li>Architected a dual-engine inference backend using standard PyTorch for local development and vLLM with PagedAttention for high-throughput production serving, packaged behind a FastAPI service with Docker deployment.</li><li>Evaluated post-training quantization methods (GPTQ, AWQ) for LLM inference, comparing memory footprint and output quality to inform deployment decisions on constrained hardware.</li><li>Investigated custom neural network architectures and algorithm optimization within the AI Research Team, supporting applied computer vision research and deployment.</li></ul>
+</article></section>
+<section aria-labelledby="research-title" class="content-section" id="research"><div class="section-heading"><span aria-hidden="true" class="section-number">04</span><h2 id="research-title">Research Experience</h2></div><div class="research-interests"><p class="sub_list" style="margin-bottom: 20px;">My research interests lie broadly in deep learning, with particular focus on computer vision, large language models, NLP, generative models, and reinforcement learning. I'm increasingly drawn to mechanistic interpretability and representation learning, trying to understand not just how these systems perform, but why they work the way they do. Whether that leads to theoretical insight or a deployable system, what matters most to me is doing the work with rigor.</p></div><article class="timeline-entry">
+<h3 class="timeline-title">Independent Researcher — Land-Use Segmentation and Generative Augmentation</h3>
+<div class="timeline-meta"><p class="timeline-date">May 2026 – Oct 2026</p><p class="entry-affiliation">Dept. of Electronics and Computer Engineering, <a class="affiliation-link" href="https://doece.tcioe.edu.np/">IOE Thapathali Campus</a>, Kathmandu, Nepal</p></div>
+<ul class="detail-list"><li>Built and released a six-class land-use segmentation benchmark covering 202.4 km² of the Kathmandu Valley across 408 hand-annotated fine-resolution scenes, published on Zenodo with fold definitions, metric records and trained weights (DOI: 10.5281/zenodo.22349064).</li><li>Designed and validated a full evaluation protocol across five architectures (U-Net, UNetFormer, SegFormer-B0, SegNeXt-T, proposed) and two data partitioning regimes, quantifying that split protocol alone shifts reported mIoU by 0.051–0.095, an effect larger than any architectural difference.</li><li>Developed a thin-structure-aware segmentation model adding a residual detail path, boundary-reliability reweighting, a clDice topology loss and a presence-balanced sampler to a SegFormer-B0 backbone, improving on the backbone in every fold-run for 1.9% additional parameters.</li><li>Implemented a two-stage diffusion generator (mask DDPM plus LoRA-adapted Stable Diffusion with a class-channel ControlNet) and a compute-matched downstream evaluation with bootstrap confidence intervals.</li></ul>
+</article></section>
+<section aria-labelledby="publications-title" class="content-section" id="publications"><div class="section-heading"><span aria-hidden="true" class="section-number">05</span><h2 id="publications-title">Publications</h2></div><div class="publication-list"><article class="publication-entry"><div class="publication-meta"><h3 class="publication-type">Preprint</h3></div><div class="publication-content"><p class="publication-citation">Parajuli, P., Dahal, S., &amp; Dahal, K. C. (2026). Fine-resolution land-use segmentation and synthetic image-label augmentation in the Kathmandu Valley [Preprint]. arXiv:2611.10847.</p><p class="submission-status"><strong>Submitted for journal publication.</strong></p><p class="resource-links"><a href="https://arxiv.org/abs/2611.10847" rel="noopener noreferrer" target="_blank">[arXiv]</a> | <a href="https://arxiv.org/pdf/2611.10847" rel="noopener noreferrer" target="_blank">[PDF]</a></p></div></article>
+<article class="publication-entry"><div class="publication-meta"><h3 class="publication-type">Dataset</h3></div><div class="publication-content"><p class="publication-citation">Parajuli, P., &amp; Dahal, S. (2026). Kathmandu Valley Land-Use and Land-Cover Segmentation Dataset (Version 1) [Dataset]. Zenodo. <a href="https://doi.org/10.5281/zenodo.22349064" target="_blank">https://doi.org/10.5281/zenodo.22349064</a></p><p class="resource-links"><a href="https://zenodo.org/records/22349064" target="_blank">[Zenodo Record]</a></p></div></article></div></section>
+<section aria-labelledby="skills-title" class="content-section" id="skills"><div class="section-heading"><span aria-hidden="true" class="section-number">06</span><h2 id="skills-title">Technical Skills</h2></div><dl class="skills-grid"><div class="skill-group"><dt>Programming Languages:</dt><dd>Python, C++, JavaScript, SQL, Bash, LaTeX</dd></div><div class="skill-group"><dt>Machine Learning &amp; Deep Learning:</dt><dd>PyTorch, TensorFlow, Scikit-learn, XGBoost, Hugging Face Transformers, Neural Networks, CNN, RNN, Transformers, Semantic Segmentation, Diffusion Models, Transfer Learning, Fine-Tuning, LoRA / PEFT, Model Quantization (GPTQ, AWQ), Mixed-Precision Training</dd></div><div class="skill-group"><dt>LLMs &amp; NLP:</dt><dd>Large Language Models, GPT-2 Fine-Tuning, BPE Tokenization, Multi-Head Attention, Function Calling, Structured Outputs, Agentic Workflows, Prompt Engineering, LLM Evaluation (BLEU, Perplexity)</dd></div><div class="skill-group"><dt>Computer Vision:</dt><dd>Image Segmentation, Vision-Language Models, OCR, SegFormer, U-Net, Stable Diffusion, ControlNet, Albumentations, CVAT</dd></div><div class="skill-group"><dt>MLOps &amp; Deployment:</dt><dd>FastAPI, Flask, vLLM, Docker, REST APIs, Git, GitHub, Linux, PostgreSQL, Weights &amp; Biases, pytest, Pydantic, CUDA, Google Colab, Hugging Face Hub</dd></div><div class="skill-group"><dt>Data Science &amp; Statistics:</dt><dd>NumPy, Pandas, Matplotlib, Seaborn, Data Preprocessing, Feature Engineering, PCA, Cross-Validation, Bootstrap Confidence Intervals, Experiment Design, Statistical Analysis, Data Visualization</dd></div></dl></section>
+<section aria-labelledby="projects-title" class="content-section" id="projects"><div class="section-heading"><span aria-hidden="true" class="section-number">07</span><h2 id="projects-title">Selective Projects</h2></div><div class="projects-grid"><article class="project-entry">
+<span aria-hidden="true" class="project-index">PROJECT / 01</span>
+<h3>GeoNUSAF: GeoSpatial Neural Urban Synthesis and Analysis Framework</h3>
+<p class="project-stack">PyTorch, SegFormer, Stable Diffusion, ControlNet, FastAPI, Weights &amp; Biases | Team of 4</p>
+<ul class="detail-list"><li>Fine-tuned a SegFormer-B0 backbone for 7-class urban land-use segmentation on 512x512 satellite imagery, using class-weighted cross-entropy for imbalance, albumentations-based augmentation and 3-fold cross-validation, reaching 0.50–0.60 validation mIoU with experiment tracking in Weights &amp; Biases.</li><li>Built a generative urban-planning pipeline feeding segmentation masks and templated prompts into Stable Diffusion with Canny-edge ControlNet conditioning, decoupling structural guidance via a reference image, and served the system through a FastAPI backend with automated cost and time estimation.</li></ul>
+</article>
+<article class="project-entry">
+<span aria-hidden="true" class="project-index">PROJECT / 02</span>
+<h3>High-Performance OCR Microservice</h3>
+<p class="project-stack">Python, LightOnOCR-2-1B (VLM), vLLM, FastAPI, Docker, Hugging Face Transformers</p>
+<ul class="detail-list"><li>Built an end-to-end OCR microservice around a 1B-parameter vision-language model, replacing brittle multi-stage OCR pipelines with direct image-to-text inference over PDFs, scans and images.</li><li>Implemented configurable dual-backend inference (Hugging Face for low-VRAM development, vLLM for production throughput), aspect-preserving 200 DPI PDF preprocessing, health and diagnostic endpoints, and containerised deployment via Docker Compose.</li></ul>
+</article>
+<article class="project-entry">
+<span aria-hidden="true" class="project-index">PROJECT / 03</span>
+<h3>StockSage: Multi-Agent AI Financial Research Platform</h3>
+<p class="project-stack">Python, LangGraph, ChromaDB, Groq, FastAPI, Streamlit, Docker, pytest</p>
+<ul class="detail-list"><li>Built a six-agent LangGraph workflow combining live market data, SEC filings and financial news with hybrid semantic/BM25 retrieval and neural reranking to generate citation-grounded equity research reports.</li><li>Implemented deterministic risk metrics, human approval checkpoints and critic-guided report revision; delivered a FastAPI backend and Streamlit dashboard with Docker Compose deployment and GitHub Actions CI covering 114+ offline unit tests.</li></ul>
+</article>
+<article class="project-entry">
+<span aria-hidden="true" class="project-index">PROJECT / 04</span>
+<h3>Building Large Language Models from Scratch</h3>
+<p class="project-stack">PyTorch, Transformers, Multi-Head Attention, BPE Tokenization, tiktoken</p>
+<ul class="detail-list"><li>Implemented a complete GPT-style language model from first principles across 11 progressive modules: BPE tokenization, sliding-window data loaders, token and positional embeddings, multi-head self-attention, causal masking, layer normalisation and cross-entropy training with perplexity tracking.</li><li>Engineered a weight-mapping pipeline converting pretrained OpenAI GPT-2 (124M) TensorFlow checkpoints into the custom PyTorch architecture for verified text generation and inference.</li></ul>
+</article>
+<article class="project-entry">
+<span aria-hidden="true" class="project-index">PROJECT / 05</span>
+<h3>Interactive Chatbot for Mental Wellbeing</h3>
+<p class="project-stack">Python, PyTorch, GPT-2 Fine-Tuning, Flask, PostgreSQL, React | Team of 4</p>
+<ul class="detail-list"><li>Fine-tuned GPT-2 on 6 domain-specific Hugging Face mental health datasets over 10 epochs (batch size 4, learning rate 3e-5) to generate contextually aware supportive responses, evaluating generation quality with BLEU score.</li><li>Built the Flask REST API and a four-table PostgreSQL schema handling authentication, interaction logging, ratings and feedback capture, integrated with a React frontend for real-time conversation.</li></ul>
+</article>
+<article class="project-entry">
+<span aria-hidden="true" class="project-index">PROJECT / 06</span>
+<h3>Network Intrusion Detection System (NSL-KDD)</h3>
+<p class="project-stack">Python, Scikit-learn, XGBoost, Pandas, PCA</p>
+<ul class="detail-list"><li>Built an automated ML pipeline for network intrusion detection featuring programmatic Kaggle dataset extraction, categorical encoding, robust feature scaling and optional PCA dimensionality reduction.</li><li>Benchmarked 7 classifiers (XGBoost, Random Forest, Linear SVM, KNN, Naive Bayes, Decision Tree, Logistic Regression) on accuracy, precision and recall with automated confusion-matrix and feature-importance visualisations.</li></ul>
+</article></div></section>
+<section aria-labelledby="certifications-title" class="content-section" id="certifications"><div class="section-heading"><span aria-hidden="true" class="section-number">08</span><h2 id="certifications-title">Certifications</h2></div><ul class="certification-list"><li>The Complete Full-Stack Web Development Bootcamp – Udemy, 2024</li><li>Hardware Fellowship Program – Locus, 2023</li></ul></section>
+<section aria-labelledby="beyond-title" class="content-section" id="beyond"><div class="section-heading"><span aria-hidden="true" class="section-number">09</span><h2 id="beyond-title">Beyond the Lab</h2></div><div class="beyond-copy"><p>I ran for student office in a closely contested campus election, narrowly missing out by a handful of votes. It reinforced my interest in leadership and community involvement. Growing up, I was elected school captain, and I picked up a fair share of medals across sports along the way. What I really want going forward is to contribute to something bigger than just my own growth, whether that's mentoring, organizing, or getting involved in community work, not necessarily tied to my career at all.</p></div></section>
+<footer class="site-footer"><p class="site-updated">Last Updated on: <time datetime="2026-11-10">November 10, 2026</time></p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+</main>
 </body>
-</html> 
+</html>
