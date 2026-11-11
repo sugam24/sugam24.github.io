@@ -17,7 +17,7 @@
     // The page uses its default light colors if storage is unavailable.
   }
 </script>
-<link href="assets/css/style.css?v=20261111-6" rel="stylesheet"/>
+<link href="assets/css/style.css?v=20261111-8" rel="stylesheet"/>
 <script defer="" src="assets/js/main.js?v=20261111-3"></script>
 </head>
 <body id="top">
@@ -113,30 +113,109 @@
 </div>
 </div>
 </section>
-<section aria-labelledby="education-title" class="content-section" id="education"><div class="section-heading"><span aria-hidden="true" class="section-number">02</span><h2 id="education-title">Education</h2></div><div class="education-grid"><article class="education-entry"><h3>Undergraduate</h3><p class="education-qualification"><b>Apr 2022 – Aug 2026</b>, Bachelor of Engineering in Computer <span class="education-result">Engineering | 78.56%</span></p><p class="education-school"><a class="affiliation-link" href="https://tcioe.edu.np/" target="_blank" rel="noopener noreferrer">Institute of Engineering (IOE), Thapathali Campus</a>, Kathmandu, Nepal</p></article>
-<article class="education-entry"><h3>Higher Secondary</h3><p class="education-qualification"><b>Jun 2019 – Dec 2021</b>, Higher Secondary Education (Science) | GPA 3.59 / 4.00</p><p class="education-school"><a class="affiliation-link" href="https://gss.edu.np/" target="_blank" rel="noopener noreferrer">Global School of Science</a>, Kathmandu, Nepal</p></article>
-<article class="education-entry"><h3>Secondary</h3><p class="education-qualification"><b>Graduated: 2019</b>, Secondary Education Examination (SEE) | GPA 3.90 / 4.00</p><p class="education-school"><a class="affiliation-link" href="https://riaschool.edu.np/" target="_blank" rel="noopener noreferrer">Reliance International Academy</a>, Kathmandu, Nepal</p></article></div></section>
-<section aria-labelledby="experience-title" class="content-section" id="experience"><div class="section-heading"><span aria-hidden="true" class="section-number">03</span><h2 id="experience-title">Professional Experience</h2></div>
+<section aria-labelledby="education-title" class="content-section" id="education">
+<div class="section-heading"><span aria-hidden="true" class="section-number">02</span><h2 id="education-title">Education</h2></div>
+<div class="education-grid">
+<article class="education-entry education-primary">
+<h3>Bachelor of Engineering in Computer Engineering</h3>
+<p class="education-school"><a class="affiliation-link" href="https://tcioe.edu.np/" target="_blank" rel="noopener noreferrer">Institute of Engineering (IOE), Thapathali Campus</a>, Kathmandu, Nepal</p>
+<p class="education-meta"><span>Apr 2022 – Aug 2026</span><span>Result <strong>78.56%</strong></span></p>
+</article>
+<article class="education-entry">
+<h3>Higher Secondary Education (Science)</h3>
+<p class="education-school"><a class="affiliation-link" href="https://gss.edu.np/" target="_blank" rel="noopener noreferrer">Global School of Science</a>, Kathmandu, Nepal</p>
+<p class="education-meta"><span>Jun 2019 – Dec 2021</span><span>GPA <strong>3.59 / 4.00</strong></span></p>
+</article>
+</div>
+</section>
+<section aria-labelledby="experience-title" class="content-section" id="experience">
+<div class="section-heading"><span aria-hidden="true" class="section-number">03</span><h2 id="experience-title">Professional Experience</h2></div>
 <article class="timeline-entry">
 <h3 class="timeline-title">LLM Security Engineer</h3>
 <div class="timeline-meta">
 <p class="timeline-date">Oct 2026 – Present</p>
-<p class="entry-affiliation">CONFIDENTIAL</p>
+<p class="entry-affiliation confidential-affiliation">Confidential Organization</p>
 </div>
-<ul class="detail-list"><li>Conduct LLM red teaming and security assessments to identify model vulnerabilities and evaluate safeguards.</li></ul>
+<ul class="detail-list">
+<li>Conduct red teaming and security assessments of large language models to identify vulnerabilities and evaluate the effectiveness of model safeguards.</li>
+</ul>
 </article>
 <article class="timeline-entry">
 <h3 class="timeline-title">AI Research Intern</h3>
-<div class="timeline-meta"><p class="timeline-date">Dec 2025 – May 2026</p><p class="entry-affiliation"><a class="affiliation-link" href="https://www.wiseyak.com/" target="_blank" rel="noopener noreferrer">Wise Yak Solutions Pvt. Ltd.</a>, Kathmandu, Nepal</p></div>
-<ul class="detail-list"><li>Engineered a production-ready OCR pipeline built on a 1B-parameter vision-language model, extracting structured text, dense tables and mathematical notation from complex document layouts.</li><li>Architected a dual-engine inference backend using standard PyTorch for local development and vLLM with PagedAttention for high-throughput production serving, packaged behind a FastAPI service with Docker deployment.</li><li>Evaluated post-training quantization methods (GPTQ, AWQ) for LLM inference, comparing memory footprint and output quality to inform deployment decisions on constrained hardware.</li><li>Investigated custom neural network architectures and algorithm optimization within the AI Research Team, supporting applied computer vision research and deployment.</li></ul>
-</article></section>
-<section aria-labelledby="research-title" class="content-section" id="research"><div class="section-heading"><span aria-hidden="true" class="section-number">04</span><h2 id="research-title">Research Experience</h2></div><div class="research-interests"><p class="sub_list" style="margin-bottom: 20px;">My research interests lie broadly in deep learning, with particular focus on computer vision, large language models, NLP, generative models, and reinforcement learning. I'm increasingly drawn to mechanistic interpretability and representation learning, trying to understand not just how these systems perform, but why they work the way they do. Whether that leads to theoretical insight or a deployable system, what matters most to me is doing the work with rigor.</p></div><article class="timeline-entry">
+<div class="timeline-meta">
+<p class="timeline-date">Dec 2025 – May 2026</p>
+<p class="entry-affiliation"><a class="affiliation-link" href="https://www.wiseyak.com/" target="_blank" rel="noopener noreferrer">Wise Yak Solutions Pvt. Ltd.</a>, Kathmandu, Nepal</p>
+</div>
+<ul class="detail-list">
+<li>Built an OCR pipeline around a 1B-parameter vision-language model to extract structured text, dense tables, and mathematical notation from complex documents.</li>
+<li>Used PyTorch for local development and vLLM with PagedAttention for higher-throughput production inference. Packaged the two backends behind a FastAPI service for Docker deployment.</li>
+<li>Evaluated GPTQ and AWQ post-training quantization for LLM inference, comparing memory footprint and output quality to inform deployment decisions on constrained hardware.</li>
+<li>Implemented and experimented with foundational neural network architectures in PyTorch, gaining practical experience in model development, training, and evaluation.</li>
+</ul>
+</article>
+</section>
+<section aria-labelledby="research-title" class="content-section" id="research">
+<div class="section-heading"><span aria-hidden="true" class="section-number">04</span><h2 id="research-title">Research Experience</h2></div>
+<div class="research-interests">
+<p>My interests span deep learning, particularly computer vision, language models, and generative modeling. I'm drawn to understanding how neural networks learn and represent information, with a growing focus on mechanistic interpretability and generalization. My research so far has involved semantic segmentation, generative augmentation, and rigorous model evaluation.</p>
+</div>
+<article class="timeline-entry">
 <h3 class="timeline-title">Independent Researcher — Land-Use Segmentation and Generative Augmentation</h3>
-<div class="timeline-meta"><p class="timeline-date">May 2026 – Oct 2026</p><p class="entry-affiliation">Dept. of Electronics and Computer Engineering, <a class="affiliation-link" href="https://doece.tcioe.edu.np/" target="_blank" rel="noopener noreferrer">IOE Thapathali Campus</a>, Kathmandu, Nepal</p></div>
-<ul class="detail-list"><li>Built and released a six-class land-use segmentation benchmark covering 202.4 km² of the Kathmandu Valley across 408 hand-annotated fine-resolution scenes, published on Zenodo with fold definitions, metric records and trained weights (DOI: 10.5281/zenodo.22349064).</li><li>Designed and validated a full evaluation protocol across five architectures (U-Net, UNetFormer, SegFormer-B0, SegNeXt-T, proposed) and two data partitioning regimes, quantifying that split protocol alone shifts reported mIoU by 0.051–0.095, an effect larger than any architectural difference.</li><li>Developed a thin-structure-aware segmentation model adding a residual detail path, boundary-reliability reweighting, a clDice topology loss and a presence-balanced sampler to a SegFormer-B0 backbone, improving on the backbone in every fold-run for 1.9% additional parameters.</li><li>Implemented a two-stage diffusion generator (mask DDPM plus LoRA-adapted Stable Diffusion with a class-channel ControlNet) and a compute-matched downstream evaluation with bootstrap confidence intervals.</li></ul>
-</article></section>
-<section aria-labelledby="publications-title" class="content-section" id="publications"><div class="section-heading"><span aria-hidden="true" class="section-number">05</span><h2 id="publications-title">Publications</h2></div><div class="publication-list"><article class="publication-entry"><div class="publication-meta"><h3 class="publication-type">Preprint</h3></div><div class="publication-content"><p class="publication-citation">Parajuli, P., Dahal, S., &amp; Dahal, K. C. (2026). Fine-resolution land-use segmentation and synthetic image-label augmentation in the Kathmandu Valley [Preprint]. arXiv:2611.10847.</p><p class="submission-status"><strong>Submitted for journal publication.</strong></p><p class="resource-links"><a href="https://arxiv.org/abs/2611.10847" rel="noopener noreferrer" target="_blank">[arXiv]</a> | <a href="https://arxiv.org/pdf/2611.10847" rel="noopener noreferrer" target="_blank">[PDF]</a></p></div></article>
-<article class="publication-entry"><div class="publication-meta"><h3 class="publication-type">Dataset</h3></div><div class="publication-content"><p class="publication-citation">Parajuli, P., &amp; Dahal, S. (2026). Kathmandu Valley Land-Use and Land-Cover Segmentation Dataset (Version 1) [Dataset]. Zenodo. <a href="https://doi.org/10.5281/zenodo.22349064" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.22349064</a></p><p class="resource-links"><a href="https://zenodo.org/records/22349064" target="_blank" rel="noopener noreferrer">[Zenodo Record]</a></p></div></article></div></section>
+<div class="timeline-meta">
+<p class="timeline-date">May 2026 – Oct 2026</p>
+<p class="entry-affiliation"><a class="affiliation-link" href="https://doece.tcioe.edu.np/" target="_blank" rel="noopener noreferrer">Dept. of Electronics and Computer Engineering</a>, IOE Thapathali Campus, Kathmandu, Nepal</p>
+</div>
+<div class="research-contributions">
+<div class="research-contribution">
+<h4>Dataset and benchmark.</h4>
+<p>Developed a six-class land-use segmentation benchmark covering 202.4 km² of the Kathmandu Valley across 408 hand-annotated fine-resolution scenes. The benchmark includes fold definitions and metric records, with trained model checkpoints listed in the research repository. The dataset is deposited on <a class="affiliation-link" href="https://doi.org/10.5281/zenodo.22349064" target="_blank" rel="noopener noreferrer">Zenodo</a> and available by request.</p>
+</div>
+<div class="research-contribution">
+<h4>Spatial evaluation.</h4>
+<p>Compared U-Net, UNetFormer, SegFormer-B0, SegNeXt-T, and TC-SegFormer over 30 fold runs under random and sequence-block partitioning. Switching to sequence blocks lowered mean intersection over union (mIoU) by 0.051–0.095 across the five architectures. The protocols used the same scenes, seeds, and training schedules, with export order serving as a proxy for spatial adjacency.</p>
+</div>
+<div class="research-contribution">
+<h4>Segmentation of thin structures.</h4>
+<p>Developed TC-SegFormer by adding a half-resolution residual detail path, boundary-reliability reweighting, a soft-clDice topology loss, and presence-balanced sampling to SegFormer-B0. With 1.9% more parameters, it improved mIoU by 0.053–0.111 over the backbone in all six Kathmandu fold runs. The two models performed similarly on LoveDA. An ablation on one fold and seed found no clear benefit from boundary reweighting on its own.</p>
+</div>
+<div class="research-contribution">
+<h4>Synthetic augmentation.</h4>
+<p>Generated image–label pairs using mask diffusion and LoRA-adapted Stable Diffusion with class-channel ControlNet conditioning. On one sequence-block fold and seed, compared a 1:1 mix of real and synthetic pairs with real-only training at the same compute budget. The mix lowered mIoU in all five architectures, by 0.014 on average, with the largest class losses for roads and rivers. Paired bootstrap confidence intervals for the mIoU change excluded zero for two architectures.</p>
+</div>
+</div>
+<p class="resource-links research-resources">
+<a href="https://arxiv.org/abs/2611.10847" target="_blank" rel="noopener noreferrer">Research preprint</a>
+<a href="https://github.com/Seg-Gen/SegSynth" target="_blank" rel="noopener noreferrer">Research code</a>
+<a href="https://github.com/Seg-Gen/SegSynth#checkpoint-directory" target="_blank" rel="noopener noreferrer">Checkpoint directory</a>
+</p>
+</article>
+</section>
+<section aria-labelledby="publications-title" class="content-section" id="publications">
+<div class="section-heading"><span aria-hidden="true" class="section-number">05</span><h2 id="publications-title">Publications</h2></div>
+<div class="publication-list">
+<article class="publication-entry">
+<p class="publication-type">Preprint · 2026</p>
+<h3>Fine-resolution land-use segmentation and synthetic image-label augmentation in the Kathmandu Valley</h3>
+<p class="publication-authors">P. Parajuli, <strong>S. Dahal</strong>, and K. C. Dahal</p>
+<p class="publication-venue">arXiv:2611.10847</p>
+<p class="submission-status">Submitted for journal publication.</p>
+<p class="resource-links">
+<a href="https://arxiv.org/abs/2611.10847" rel="noopener noreferrer" target="_blank">arXiv</a>
+<a href="https://arxiv.org/pdf/2611.10847" rel="noopener noreferrer" target="_blank">PDF</a>
+</p>
+</article>
+<article class="publication-entry">
+<p class="publication-type">Dataset · 2026</p>
+<h3>Kathmandu Valley Land-Use and Land-Cover Segmentation Dataset (Version 1)</h3>
+<p class="publication-authors">P. Parajuli and <strong>S. Dahal</strong></p>
+<p class="publication-venue">Zenodo</p>
+<p class="resource-links">
+<a href="https://doi.org/10.5281/zenodo.22349064" rel="noopener noreferrer" target="_blank">DOI 10.5281/zenodo.22349064</a>
+<a href="https://zenodo.org/records/22349064" rel="noopener noreferrer" target="_blank">Zenodo Record</a>
+</p>
+</article>
+</div>
+</section>
 <section aria-labelledby="skills-title" class="content-section" id="skills"><div class="section-heading"><span aria-hidden="true" class="section-number">06</span><h2 id="skills-title">Technical Skills</h2></div><dl class="skills-grid"><div class="skill-group"><dt>Programming Languages:</dt><dd>Python, C++, JavaScript, SQL, Bash, LaTeX</dd></div><div class="skill-group"><dt>Machine Learning &amp; Deep Learning:</dt><dd>PyTorch, TensorFlow, Scikit-learn, XGBoost, Hugging Face Transformers, Neural Networks, CNN, RNN, Transformers, Semantic Segmentation, Diffusion Models, Transfer Learning, Fine-Tuning, LoRA / PEFT, Model Quantization (GPTQ, AWQ), Mixed-Precision Training</dd></div><div class="skill-group"><dt>LLMs &amp; NLP:</dt><dd>Large Language Models, GPT-2 Fine-Tuning, BPE Tokenization, Multi-Head Attention, Function Calling, Structured Outputs, Agentic Workflows, Prompt Engineering, LLM Evaluation (BLEU, Perplexity)</dd></div><div class="skill-group"><dt>Computer Vision:</dt><dd>Image Segmentation, Vision-Language Models, OCR, SegFormer, U-Net, Stable Diffusion, ControlNet, Albumentations, CVAT</dd></div><div class="skill-group"><dt>MLOps &amp; Deployment:</dt><dd>FastAPI, Flask, vLLM, Docker, REST APIs, Git, GitHub, Linux, PostgreSQL, Weights &amp; Biases, pytest, Pydantic, CUDA, Google Colab, Hugging Face Hub</dd></div><div class="skill-group"><dt>Data Science &amp; Statistics:</dt><dd>NumPy, Pandas, Matplotlib, Seaborn, Data Preprocessing, Feature Engineering, PCA, Cross-Validation, Bootstrap Confidence Intervals, Experiment Design, Statistical Analysis, Data Visualization</dd></div></dl></section>
 <section aria-labelledby="projects-title" class="content-section" id="projects"><div class="section-heading"><span aria-hidden="true" class="section-number">07</span><h2 id="projects-title">Selective Projects</h2></div><div class="projects-grid"><article class="project-entry">
 <span aria-hidden="true" class="project-index">PROJECT / 01</span>
