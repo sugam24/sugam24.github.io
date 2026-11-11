@@ -30,6 +30,7 @@
   const toggle = document.getElementById('menu-toggle');
   const close = document.getElementById('menu-close');
   const backdrop = document.getElementById('menu-backdrop');
+  const menuBackground = document.querySelectorAll('.skip-link, .mobile-topbar, .main-content');
   const mobile = window.matchMedia('(max-width: 1000px)');
   const links = [...document.querySelectorAll('.index-link')];
   const sections = links.map(link => document.querySelector(link.getAttribute('href')));
@@ -41,8 +42,16 @@
     toggle.setAttribute('aria-expanded', String(menuOpen));
     backdrop.hidden = !menuOpen;
     sidebar.inert = mobile.matches && !menuOpen;
-    if (menuOpen) close.focus();
-    else if (restoreFocus && mobile.matches) toggle.focus();
+    menuBackground.forEach(element => { element.inert = menuOpen; });
+    if (menuOpen) {
+      sidebar.setAttribute('role', 'dialog');
+      sidebar.setAttribute('aria-modal', 'true');
+      close.focus();
+    } else {
+      sidebar.removeAttribute('role');
+      sidebar.removeAttribute('aria-modal');
+      if (restoreFocus && mobile.matches) toggle.focus();
+    }
   }
 
   toggle.addEventListener('click', () => setMenu(!menuOpen));
@@ -50,6 +59,7 @@
   backdrop.addEventListener('click', () => setMenu(false));
   sidebar.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', () => {
+      scheduleFragmentUpdate();
       if (mobile.matches) {
         setMenu(false, false);
         const target = document.querySelector(link.getAttribute('href'));
@@ -67,8 +77,14 @@
   mobile.addEventListener('change', () => setMenu(false, false));
   setMenu(false, false);
 
+  const pronounce = document.getElementById('pronounce-name');
   document.addEventListener('keydown', event => {
-    if (!menuOpen) return;
+    if (!menuOpen) {
+      if (event.key === 'Escape' && pronounce.matches(':hover, :focus-visible')) {
+        pronounce.dataset.tooltipDismissed = '';
+      }
+      return;
+    }
     if (event.key === 'Escape') {
       event.preventDefault();
       setMenu(false);
@@ -89,19 +105,25 @@
   });
 
   let scheduled = false;
+  let wasAtEnd = false;
+  let followEndFragment = true;
   function updateActiveSection() {
     const offset = mobile.matches ? 150 : 140;
     let current = 0;
     sections.forEach((section, index) => {
       if (section.getBoundingClientRect().top <= offset) current = index;
     });
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+    const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    if (atEnd) {
       // A section near the footer may be visible without reaching the scroll offset.
-      const targetIndex = links.findIndex(link => link.hash === window.location.hash);
+      const targetIndex = followEndFragment ? links.findIndex(link => link.hash === window.location.hash) : -1;
       const targetTop = sections[targetIndex]?.getBoundingClientRect().top;
       const scrollPadding = parseFloat(getComputedStyle(root).scrollPaddingTop);
       current = targetTop > scrollPadding && targetTop < window.innerHeight ? targetIndex : sections.length - 1;
+    } else if (wasAtEnd) {
+      followEndFragment = false;
     }
+    wasAtEnd = atEnd;
     links.forEach((link, index) => {
       link.classList.toggle('active', index === current);
       if (index === current) link.setAttribute('aria-current', 'location');
@@ -115,15 +137,23 @@
       window.requestAnimationFrame(updateActiveSection);
     }
   }
+  function scheduleFragmentUpdate() {
+    followEndFragment = true;
+    scheduleUpdate();
+  }
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
   window.addEventListener('resize', scheduleUpdate);
-  window.addEventListener('hashchange', scheduleUpdate);
+  window.addEventListener('hashchange', scheduleFragmentUpdate);
   window.addEventListener('load', scheduleUpdate);
   updateActiveSection();
 
-  const pronounce = document.getElementById('pronounce-name');
   const audio = document.getElementById('name-audio');
   const audioStatus = document.getElementById('audio-status');
+  function resetPronunciationTooltip() {
+    delete pronounce.dataset.tooltipDismissed;
+  }
+  pronounce.addEventListener('pointerenter', resetPronunciationTooltip);
+  pronounce.addEventListener('focus', resetPronunciationTooltip);
   pronounce.addEventListener('click', async () => {
     audioStatus.textContent = '';
     try {

@@ -116,10 +116,9 @@ h1 { font: 400 clamp(52px, 5.5vw, 98px)/1.08 var(--serif); letter-spacing: -.055
   font: .75rem/1.4 var(--sans);
   white-space: nowrap;
   visibility: hidden;
-  pointer-events: none;
 }
-.pronounce-button:hover .pronounce-tooltip,
-.pronounce-button:focus-visible .pronounce-tooltip { visibility: visible; }
+.pronounce-tooltip::after { content: ""; position: absolute; inset: 100% 0 auto; height: 8px; }
+.pronounce-button:is(:hover, :focus-visible):not([data-tooltip-dismissed]) .pronounce-tooltip { visibility: visible; }
 .profile-focus { margin-top: 20px; font: 400 clamp(20px, 1.8vw, 29px)/1.4 var(--serif); letter-spacing: -.015em; }
 .profile-institution { margin-top: 16px; color: var(--muted); font-size: 1rem; line-height: 1.55; }
 .profile-email { margin-top: 8px; color: var(--muted); font-size: 1rem; line-height: 1.55; overflow-wrap: anywhere; }
